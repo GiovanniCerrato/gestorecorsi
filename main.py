@@ -1,4 +1,3 @@
-
 import flet as ft
 
 from UI.controller import Controller
@@ -10,6 +9,5 @@ def main(page: ft.Page):
     c = Controller(v)
     v.set_controller(c)
     v.load_interface()
-
 
 ft.app(target = main)

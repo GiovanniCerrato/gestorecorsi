@@ -13,6 +13,5 @@ class Corso:
 
     def __hash__(self):
         return hash(self.codins)
-
     def __str__(self):
         return f"{self.nome} ({self.codins}) - {self.crediti} CFU"

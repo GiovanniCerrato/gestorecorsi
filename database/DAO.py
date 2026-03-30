@@ -9,15 +9,13 @@ class DAO():
         cnx = DBConnect.get_connection()
         cursor = cnx.cursor(dictionary=True)
 
-        query = """select codins
-                    FROM corso"""
+        query = """select codins from corso """
 
         cursor.execute(query)
 
         res = []
         for row in cursor:
             res.append(row["codins"])
-
 
         cursor.close()
         cnx.close()
@@ -28,7 +26,7 @@ class DAO():
         cnx = DBConnect.get_connection()
         cursor = cnx.cursor(dictionary=True)
 
-        query = """select * FROM corso"""
+        query = """select * from corso """
 
         cursor.execute(query)
 
@@ -36,11 +34,10 @@ class DAO():
         for row in cursor:
             res.append(Corso(
                 codins = row["codins"],
-                crediti = row["crediti"],
+                crediti =  row["crediti"] ,
                 nome = row["nome"],
                 pd = row["pd"]
             ))
-
 
         cursor.close()
         cnx.close()

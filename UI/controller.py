@@ -10,23 +10,19 @@ class Controller:
         # the model, which implements the logic of the program and holds the data
         self._model = Model()
 
-    def handlePrintCorsiPD(self, e):
+    def handlePrintCorsiPD(self,e):
         pass
-
-    def handlePrintIscrittiCorsiPD(self, e):
+    def handlePrintIscrittiCorsiPD(self,e):
         pass
-
-    def handlePrintIscrittiCodins(self, e):
+    def handlePrintIscrittiCodins(self,e):
         pass
-
-    def handlePrintCDSCodins(self, e):
+    def handlePrintCDSCodins(self,e):
         pass
-
     def fillddCodins(self):
-        # for cod in self._model.getCodins():
-        #     self._view.ddCodins.options.append(
-        #         ft.dropdown.Option(cod)
-        #     )
+        '''for cod in self._model.getCodins():
+            self._view.ddCodins.options.append(
+            ft.dropdown.Option(cod)
+            )'''
 
         for c in self._model.getAllCorsi():
             self._view.ddCodins.options.append(ft.dropdown.Option(
@@ -34,8 +30,7 @@ class Controller:
                 data = c,
                 on_click = self._choiceDDCodins
             ))
-            pass
 
-    def _choiceDDCodins(self, e):
+    def _choiceDDCodins(self,e):
         self._ddCodinsValue = e.control.data
         print(self._ddCodinsValue)
