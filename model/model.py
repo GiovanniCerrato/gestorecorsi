@@ -9,3 +9,7 @@ class Model:
 
     def getAllCorsi(self):
         return DAO.getAllCorsi()
+    def getCorsiPD(self,PD):
+        return DAO.getCorsiPD(PD)
+    def getIscrittiCorsoPD(self,PD):
+        return DAO.getIscrittiCorsoPD(PD)
