@@ -32,7 +32,7 @@ class View(ft.UserControl):
         self.ddPD = ft.Dropdown(
             label = "Periodo Didattico",
             options = [ft.dropdown.Option("I"), ft.dropdown.Option("II")],
-            width=200, value=None)
+            width=400, value=None)
         self.btnPrintCorsiPD = ft.ElevatedButton(text="Stampa Corsi",
                                                  on_click = self.controller.handlePrintCorsiPD,
                                                  width =300)
@@ -40,15 +40,15 @@ class View(ft.UserControl):
         self.btnPrintIscrittiCorsiPD = ft.ElevatedButton(text="Stampa numero iscritto",
                                                  on_click = self.controller.handlePrintIscrittiCorsiPD,
                                                     width =300)
-        row1 = ft.Row([self.ddPD, self.btnPrintCorsiPD, self.btnPrintIscrittiCorsiPD])
+        row1 = ft.Row([self.ddPD, self.btnPrintCorsiPD, self.btnPrintIscrittiCorsiPD], alignment = ft.MainAxisAlignment.CENTER)
 
-        self.ddCodIns = ft.Dropdown(label = "Corso", width=200)
+        self.ddCodIns = ft.Dropdown(label = "Corso", width=400,)
         self._controller.fillddCodIns()
         self.btnPrintIscrittiCodIns = ft.ElevatedButton(text="Stampa iscritti al corso",
                                                         on_click = self.controller.handlePrintIscrittiCodins, width =300)
         self.btnPrintCDSCodIns = ft.ElevatedButton(text="Stampa CDS afferenti",
                                                    on_click = self.controller.handlePrintCDSCodins ,width =300)
-        row2 = ft.Row([self.ddCodIns, self.btnPrintIscrittiCodIns, self.btnPrintCDSCodIns])
+        row2 = ft.Row([self.ddCodIns, self.btnPrintIscrittiCodIns, self.btnPrintCDSCodIns], alignment = ft.MainAxisAlignment.CENTER)
         self._page.add(row1,row2)
 
         # List View where the reply is printed
